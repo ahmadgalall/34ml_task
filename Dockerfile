@@ -1,0 +1,6 @@
+FROM node:16-alpine
+WORKDIR /app
+RUN apk add --no-cache git
+RUN git clone https://github.com/dobromir-hristov/todo-app.git .
+RUN yarn install
+CMD ["yarn", "test:unit"]
